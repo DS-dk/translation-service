@@ -42,16 +42,6 @@ class TranslationController extends Controller
             return response()->json(['error' => 'Transaction not found'], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'amount' => 'required|numeric|min:1',
-            'currency' => 'required|string|max:3',
-            'status' => 'required|in:pending,completed,failed',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
         $transaction->update($request->all());
 
         return response()->json([
