@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "b9c3409c-1f97-4b2c-a467-25aeafaebed4",
+		"name": "DemoTestApi's-Digital ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7797885",
+		"_collection_link": "https://digikhata.postman.co/workspace/My-Workspace~fdc63b7f-9933-4df9-8280-3c8450d5f61d/collection/7797885-b9c3409c-1f97-4b2c-a467-25aeafaebed4?action=share&source=collection_link&creator=7797885"
+	},
+	"item": [
+		{
+			"name": "Login-Api",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login?email=admin@example.com&password=admin123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@example.com"
+						},
+						{
+							"key": "password",
+							"value": "admin123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction - Api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|jzB5X2iWK4HL0TPXcrVZt6QT6kTbXLgQSCyDMc1d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/translations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"translations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create - API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|jzB5X2iWK4HL0TPXcrVZt6QT6kTbXLgQSCyDMc1d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"locale\": \"en\", \"key\": \"welcome\", \"value\": \"Welcome!\", \"tags\": [\"web\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/translations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"translations"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/translations\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\"locale\": \"en\", \"key\": \"welcome\", \"value\": \"Welcome!\", \"tags\": [\"web\"]}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Update - API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|jzB5X2iWK4HL0TPXcrVZt6QT6kTbXLgQSCyDMc1d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"value\": \"Welcome to our website!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/translations/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"translations",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT \"http://127.0.0.1:8000/api/translations/1\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\"value\": \"Welcome to our website!\"}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Eport-Api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/translations/export",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"translations",
+						"export"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/translations/export\"\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - API",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/translations/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"translations",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE \"http://127.0.0.1:8000/api/translations/1\"\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout - Api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|jzB5X2iWK4HL0TPXcrVZt6QT6kTbXLgQSCyDMc1d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
